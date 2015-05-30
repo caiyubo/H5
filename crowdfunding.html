@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>众筹 artsay</title>
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- artsay -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/jquery.fullPage.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <!-- Include all compipled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.fullPage.min.js"></script>
+    <script src="js/jquery.slimscroll.min.js"></script>
+    <script src="js/jquery.eraser.js"></script>
+
+  </head>
+  <body class="crowd">
+    <img id="redux" src="img/crowdfunding/2-2.png">
+    <div id="fullpage">
+      <div class="section s1">
+        <img src="img/crowdfunding/1-2.png" alt="" style="z-index: 1;">
+      </div>
+      <div class="section s2">
+        <div class="slide"><img src="img/crowdfunding/2-1.png" alt=""></div>
+        <div class="slide"><img src="img/crowdfunding/2-2.png" alt=""></div>
+        <div class="slide"><img src="img/crowdfunding/2-3.png" alt=""></div>
+      </div>
+      <div class="section s3">
+        <img src="img/crowdfunding/3.png" alt="">
+      </div>
+      <div class="section s4">
+        <img src="img/crowdfunding/4.png" alt="">
+      </div>
+      <div class="section s5">
+        <h3>黄小黄akhuang</h3>
+        <p class="lead">插画师，UI设计师</p>
+        <p>迷恋美食，旅行，服装设计，电影，猫，帽子，本子，长发男子，短发女子，泰国控。念旧，喜欢用文字画面记录时光。插画多以时尚人物，城市故事为主题，近期创作多以肖像画，用画面探索自身与人物之间的关系，游离于思考与放空之中。</p>
+        <br>
+        <p><span class="mybtn">我要支持</span></p>
+      </div>
+      <div class="section">
+        <img src="img/crowdfunding/6.png" alt="">
+      </div>
+    </div>
+    <div class="crowd-top">
+      <div class="mybtn">我要支持</div>
+    </div>
+    <div class="fixed-footer">
+      
+    </div>
+    <script>
+      $(document).ready(function() {
+        $('#fullpage').fullpage();
+        $('#redux').eraser({
+            completeRatio: .2,
+            completeFunction: showResetButton
+        });
+      });
+      function showResetButton() {
+        $("canvas#redux").remove();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+/*布局*/
+/* 使用ul li 布局基类 包含 清楚浮动 box-sizing */
+
+.layout {
+	margin:0;
+	padding:0;
+	list-style:none;
+	box-sizing: border-box;
+	&:extend(.clearfix all);
+}
+
+//make row
+.make-myrow();
+//
+
+//嵌套之后 去除多余的padding
+.row-nest {
+	padding: 0;
+}
+
+.layout-border {
+	>.row-1,
+	>.row-2,
+	>.row-3,
+	>.row-4,
+	>.row-5,
+	>.row-6,
+	>.row-7,
+	>.row-8,
+	>.row-9,
+	>.row-10,
+	>.row-11,
+	>.row-12 {
+		border-left: 1px solid @border-color;
+	}
+	>li:first-child {
+		border-left: none;
+	}
+}
+
+.layout-margin-sm {
+	margin: @layout-margin-sm;
+}
+.layout-margin-md {
+	margin: @layout-margin-md;
+}
+.layout-margin-lg {
+	margin: @layout-margin-lg;
+}

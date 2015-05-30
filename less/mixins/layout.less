@@ -1,0 +1,31 @@
+// Framework grid generation
+//
+// Used only by Bootstrap to generate the correct number of grid classes given
+// any value of `@grid-columns`.
+
+.loop-grid-row(@index, @type) when (@index <= 12) {
+	.calc-grid-row(@index, @type);
+	.loop-grid-row(@index + 1, @type);
+}
+
+.calc-grid-row(@index, @type) when (@type = width) {
+	.row-@{index} {
+		width: percentage((@index / @grid-columns));
+		float: left;
+		padding: 0 15px;
+		position: relative;
+		min-height: 1px;
+	}
+}
+.calc-grid-row(@index, @type) when (@type = offset) {
+	.row-offset-@{index} {
+		margin-left: percentage((@index / @grid-columns));
+	}
+}
+
+.make-myrow() {
+	.loop-grid-row(1, width);
+	.loop-grid-row(1, offset);
+}
+
+
