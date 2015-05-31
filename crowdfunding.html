@@ -1,92 +1,266 @@
-<!DOCTYPE html>
-<html lang="zh-cn">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>众筹 artsay</title>
-    <!-- Set render engine for 360 browser -->
-    <meta name="renderer" content="webkit">
-    <!-- No Baidu Siteapp-->
-    <meta http-equiv="Cache-Control" content="no-siteapp"/>
-    <link rel="icon" type="image/png" href="assets/i/favicon.png">
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- artsay -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/jquery.fullPage.css" rel="stylesheet">
-
-    <!--[if lt IE 9]>
-      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <!-- Include all compipled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.fullPage.min.js"></script>
-    <script src="js/jquery.slimscroll.min.js"></script>
-    <script src="js/jquery.eraser.js"></script>
-  </head>
-  <body class="crowd">
-    <img id="redux" src="img/crowdfunding/2-31.png">
-    <div id="fullpage">
-      <div class="section s1">
-        <img src="img/crowdfunding/1-2.png" alt="" style="z-index: 1;">
-      </div>
-      <div class="section s2">
-        <div class="slide"><img src="img/crowdfunding/2-1.png" alt=""></div>
-        <div class="slide"><img src="img/crowdfunding/2-2.png" alt=""></div>
-        <div class="slide"><img src="img/crowdfunding/2-3.png" alt=""></div>
-      </div>
-      <div class="section s3">
-        <img src="img/crowdfunding/3.png" alt="">
-      </div>
-      <div class="section s4">
-        <img src="img/crowdfunding/4.png" alt="">
-      </div>
-      <div class="section s5">
-        <h3>黄小黄akhuang</h3>
-        <p class="lead">插画师，UI设计师</p>
-        <p>迷恋美食，旅行，服装设计，电影，猫，帽子，本子，长发男子，短发女子，泰国控。念旧，喜欢用文字画面记录时光。插画多以时尚人物，城市故事为主题，近期创作多以肖像画，用画面探索自身与人物之间的关系，游离于思考与放空之中。</p>
-        <br>
-        <p><span class="mybtn">我要支持</span></p>
-      </div>
-      <div class="section">
-        <img src="img/crowdfunding/6.png" alt="">
-      </div>
-    </div>
-    <div class="crowd-top">
-      <div class="mybtn">我要支持</div>
-    </div>
-    <div class="fixed-footer">
-      
-    </div>
-    <script>
-      $(document).ready(function() {
-        $('#fullpage').fullpage({
-          afterLoad: function(anchorLink, index){
-            //using index
-
-            if(index == 6){
-                $('.fixed-footer').fadeOut();
-            }else {
-              $('.fixed-footer').show();
-            }
-          }
-        });
-        $('#redux').eraser({
-            completeRatio: .05,
-            completeFunction: showResetButton
-        });
-        $(".fp-controlArrow").remove();
-      });
-      function showResetButton() {
-        console.log("cfjsd");
-        $('canvas#redux').hide();
-      }
-    </script>
-  </body>
-</html>
+<!DOCTYPE html>
+
+<html lang="zh-cn">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="keywords" content="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>众筹 artsay</title>
+
+    <!-- Set render engine for 360 browser -->
+
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+
+    <!-- Bootstrap -->
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- artsay -->
+
+    <link href="css/style.css" rel="stylesheet">
+
+    <link href="css/jquery.fullPage.css" rel="stylesheet">
+
+
+
+    <!--[if lt IE 9]>
+
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+
+    <!-- Include all compipled plugins (below), or include individual files as needed -->
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/jquery.fullPage.min.js"></script>
+
+    <script src="js/jquery.slimscroll.min.js"></script>
+
+    <script src="js/jquery.eraser.js"></script>
+
+    <style>
+      .s3 {
+        padding-top: 20px;
+        text-align: center;
+      }
+      .s3 img {
+        max-width: 90%;
+        position: relative;
+        margin-bottom: 15px;
+      }
+      #s3-1 {
+        left: -500px;
+      }
+      #s3-2 {
+        left: 500px;
+      }
+      #s3-3 {
+        left: -500px;
+      }
+	  .fp-controlArrow.fp-prev {
+        border-width: 15.5px 14px 15.5px 0
+      }
+      .fp-controlArrow.fp-next {
+        border-width: 15.5px 0 15.5px 14px
+      }
+    </style>
+
+  </head>
+
+  <body class="crowd">
+
+    <div id="fullpage">
+
+      <div class="section s1">
+
+        <img src="img/crowdfunding/1-2.png" alt="" style="z-index: 1; max-width:80%;">
+
+      </div>
+
+      <div class="section s2" style="background: url(img/crowdfunding/bg-2.jpg) no-repeat;">
+
+        <div class="slide"><img src="img/crowdfunding/2-1.jpg" alt="" style="max-width: 80%;"></div>
+
+        <div class="slide"><img src="img/crowdfunding/2-2.jpg" alt="" style="max-width: 80%;"></div>
+
+        <div class="slide"><img src="img/crowdfunding/2-3.jpg" alt="" style="max-width: 80%;"></div>
+
+      </div>
+
+      <div class="section s3">
+
+        <img src="img/crowdfunding/3-1.jpg" alt="" id="s3-1">
+        <img src="img/crowdfunding/3-2.jpg" alt="" id="s3-2">
+        <img src="img/crowdfunding/3-3.jpg" alt="" id="s3-3">
+
+      </div>
+
+      <div class="section s4 ">
+
+        <img src="img/crowdfunding/4.png" alt="">
+        <img src="img/crowdfunding/4-1.png" class="s4-1" alt="" style="max-width:16%; top: -10%; left:-60%;display:none;">
+        <img src="img/crowdfunding/4-2.png" class="s4-2" alt="" style="max-width:25%; top: -10%; left:-7%;display:none;">
+        <img src="img/crowdfunding/4-3.png" class="s4-3" alt="" style="max-width:25%; top: -10%; left:55%;display:none;">
+        <img src="img/crowdfunding/4-4.png" class="s4-4" alt="" style="max-width:35%; top: 32%; left:-40%;display:none;">
+        <img src="img/crowdfunding/4-5.png" class="s4-5" alt="" style="max-width:35%; top: 32%; left:40%;display:none;">
+      </div>
+
+      <div class="section s5" style="background: none;">
+        <img src="img/crowdfunding/5-1.png" class="s5-1" alt="" style="max-width:55%; top: -50%; left:-30%;display:none;">
+        <img src="img/crowdfunding/5-2.png" class="s5-2" alt="" style="max-width:35%; top: -25%; left:55%;display:none;">
+        <img src="img/crowdfunding/5-3.png" class="s5-3" alt="" style="max-width:25%; top: 35%; left:5%;display:none;">
+        <img src="img/crowdfunding/5-4.png" class="s5-4" alt="" style="max-width:20%; top: 50%; left:50%;display:none;">
+        <h2 style="padding-top: 50px; margin-bottom:0; position:relative; z-index: 10;">黄小黄akhuang</h2>
+
+        <p class="lead" style="margin-top: 0px; position:relative; z-index: 10;">插画师，UI设计师</p>
+
+        <p style="position:relative; z-index: 10;">迷恋美食，旅行，服装设计，电影，猫，帽子，本子，长发男子，短发女子，泰国控。念旧，喜欢用文字画面记录时光。插画多以时尚人物，城市故事为主题，近期创作多以肖像画，用画面探索自身与人物之间的关系，游离于思考与放空之中。</p>
+
+        <br>
+
+        <p style="position:relative; z-index: 10;"><a class="mybtn" href="http://www.baidu.com/">我要支持</a></p>
+
+      </div>
+
+      <div class="section">
+
+        <img src="img/crowdfunding/6.png" alt="">
+
+      </div>
+
+    </div>
+
+    <div class="crowd-top">
+
+      <div class="mybtn">我要支持</div>
+
+    </div>
+
+    <div class="fixed-footer">
+
+      
+
+    </div>
+
+    <script>
+
+      $(document).ready(function() {
+
+        $('#fullpage').fullpage({
+		
+		  loopHorizontal: false,
+
+          afterLoad: function(anchorLink, index){
+
+            //using index
+
+            if(index == 3) {
+              $(".fixed-footer").hide();
+              $("#s3-1").animate({
+                left: 0
+              },1000,function() {
+                $("#s3-2").animate({
+                  left: 0
+                },1000,function() {
+                  $("#s3-3").animate({
+                    left: 0
+                  },1000,function() {
+                    $('.fixed-footer').show();
+                  })
+                })
+              })
+            }
+
+            if(index == 4) {
+              $(".fixed-footer").hide();
+              $(".s4-1").fadeIn(500,function() {
+                $(".s4-2").fadeIn(500,function() {
+                  $(".s4-3").fadeIn(500,function() {
+                    $(".s4-4").fadeIn(500,function() {
+                      $(".s4-5").fadeIn(500,function() {
+                        $(".fixed-footer").show();
+                      })
+                    })
+                  })
+                })
+              })  
+            }
+
+            if(index == 5) {
+              $(".fixed-footer").hide();
+              $(".s5-1").fadeIn(500,function() {
+                $(".s5-2").fadeIn(500,function() {
+                  $(".s5-3").fadeIn(500,function() {
+                    $(".s5-4").fadeIn(500,function() {
+                      $(".fixed-footer").show();
+                    })
+                  })
+                })
+              })  
+            }
+
+            if(index == 6){
+
+                $('.fixed-footer').fadeOut();
+
+            }else if ( index != 3) {
+
+              $('.fixed-footer').show();
+
+            }
+
+          }
+
+        });
+
+        $('#redux').eraser({
+
+            completeRatio: .05,
+
+            completeFunction: showResetButton
+
+        });
+
+        $(".fixed-footer").click(function() {
+          $.fn.fullpage.moveSectionDown()
+        })
+        
+
+      });
+
+      function showResetButton() {
+
+        console.log("cfjsd");
+
+        $('canvas#redux').hide();
+
+      }
+
+    </script>
+
+  </body>
+
+</html>
+
