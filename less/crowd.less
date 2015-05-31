@@ -32,7 +32,9 @@ body {
 		max-width: 100%;
 	}
 }
-
+.s2 {
+	background: url(../img/crowdfunding/bg-2.png) repeat center top;
+}
 .s5 {
 	background: url(../img/crowdfunding/5.png) repeat center top;
 	background-size: 100% auto;
@@ -53,8 +55,24 @@ body {
 	height: 24px;
 	width: 100%;
 	background-size: auto 24px;
+	display: none;
+	.animation(fadeToggle 2s 10000);
 }
 
 canvas#redux {
-	position: relative; z-index: 4;
+	position: fixed;
+	z-index: 4;
+	top: 0;
+}
+
+@-webkit-keyframes fadeToggle {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.2;
+	}
+	100% {
+		opacity: 1;
+	}
 }
