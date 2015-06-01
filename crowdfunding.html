@@ -85,8 +85,31 @@
       .fp-controlArrow.fp-next {
         border-width: 15.5px 0 15.5px 14px
       }
+	  .crowd-top {box-shadow: 0 3px 5px #ccc;}
     </style>
-
+	<style type="text/css">
+		/*首页蒙板*/
+		.canvas_box {
+			position: fixed;
+			z-index: 10000;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+		.canvas_mask {
+			width: 100%;
+			height: 100%;
+			opacity: 1;
+			-webkit-transition: opacity .5s;
+			-ms-transition: opacity .5s;
+			-moz-transition: opacity .5s;
+		}
+		.noOp {
+			opacity: 0 !important;
+			
+		}
+	</style>
   </head>
 
   <body class="crowd">
@@ -96,7 +119,7 @@
       <div class="section s1">
 
         <img src="http://7xje45.com2.z0.glb.qiniucdn.com/1-2.png" alt="" style="z-index: 1; max-width:80%;">
-
+        
       </div>
 
       <div class="section s2" style="background: url(http://7xje45.com2.z0.glb.qiniucdn.com/bg-2.jpg) no-repeat;">
@@ -140,13 +163,14 @@
 
         <br>
 
-        <p style="position:relative; z-index: 10;"><a class="mybtn" href="http://qsc.dreamore.com/project/view?project_id=25095">我要支持</a></p>
+        <p style="position:relative; z-index: 10;"><a class="mybtn" href="http://www.baidu.com/">我要支持</a></p>
 
       </div>
 
       <div class="section">
 
         <img src="http://7xje45.com2.z0.glb.qiniucdn.com/6.png" alt="">
+		<a  href="http://www.baidu.com/"><img src="http://7xje45.com2.z0.glb.qiniucdn.com/mybtn.png" alt="" style="max-width: 47%; bottom: -54%;"></a>
 
       </div>
 
@@ -154,7 +178,7 @@
 
     <div class="crowd-top">
 
-      <a class="mybtn" href="http://qsc.dreamore.com/project/view?project_id=25095">我要支持</a>
+      <a class="mybtn" href="http://www.baidu.com/">我要支持</a>
 
     </div>
 
@@ -163,9 +187,14 @@
       
 
     </div>
-
+    <div id="canvas_box" class="canvas_box">
+		<canvas id="canvas_mask" class="canvas_mask"></canvas>
+	</div>
+    <script type="text/javascript" src="js/canvas_mask.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		CanvasMask('canvas_box', 'canvas_mask', 'img/mask.jpg');
+	</script>
     <script>
-
       $(document).ready(function() {
 
         $('#fullpage').fullpage({
