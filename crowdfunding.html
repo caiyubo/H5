@@ -113,7 +113,13 @@
   </head>
 
   <body class="crowd">
-
+<div id="canvas_box" class="canvas_box">
+		<canvas id="canvas_mask" class="canvas_mask"></canvas>
+	</div>
+	 <script type="text/javascript" src="js/canvas_mask.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		CanvasMask('canvas_box', 'canvas_mask', 'img/1.jpg');
+	</script>
     <div id="fullpage">
 
       <div class="section s1">
@@ -170,7 +176,7 @@
       <div class="section">
 
         <img src="http://7xje45.com2.z0.glb.qiniucdn.com/6.png" alt="">
-		<img src="http://7xje45.com2.z0.glb.qiniucdn.com/呓语.jpg" alt="" style="max-width: 47%; bottom: -54%;">
+		<img src="http://7xje45.com2.z0.glb.qiniucdn.com/呓语.jpg" alt="" style="max-width: 30%; bottom: -65%;">
 
       </div>
 
@@ -187,13 +193,8 @@
       
 
     </div>
-    <div id="canvas_box" class="canvas_box">
-		<canvas id="canvas_mask" class="canvas_mask"></canvas>
-	</div>
-    <script type="text/javascript" src="js/canvas_mask.js"></script>
-	<script type="text/javascript" charset="utf-8">
-		CanvasMask('canvas_box', 'canvas_mask', 'img/1.jpg');
-	</script>
+ 
+   
     <script>
       $(document).ready(function() {
 
