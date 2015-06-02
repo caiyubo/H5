@@ -60,6 +60,8 @@
 
     <script src="js/jquery.eraser.js"></script>
 
+    <script type="text/javascript" src="js/canvas_mask.js"></script>
+
     <style>
       .s3 {
         padding-top: 20px;
@@ -116,10 +118,6 @@
 <div id="canvas_box" class="canvas_box">
 		<canvas id="canvas_mask" class="canvas_mask"></canvas>
 	</div>
-	 <script type="text/javascript" src="js/canvas_mask.js"></script>
-	<script type="text/javascript" charset="utf-8">
-		CanvasMask('canvas_box', 'canvas_mask', 'img/1.jpg');
-	</script>
     <div id="fullpage">
 
       <div class="section s1">
@@ -277,7 +275,7 @@
           $.fn.fullpage.moveSectionDown()
         })
         
-
+        CanvasMask('canvas_box', 'canvas_mask', 'img/1.jpg');
       });
 
       function showResetButton() {
