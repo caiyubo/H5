@@ -1,5 +1,5 @@
 (function (window) {
-	function CanvasMask(canvasBoxId, canvasId, maskImgSrc) {
+	function CanvasMask(canvasBoxId, canvasId, maskImgSrc, isClip) {
 		var canvasBox = document.getElementById(canvasBoxId);
 		var canvas = document.getElementById(canvasId),
 			ctx = canvas.getContext("2d");
@@ -11,8 +11,22 @@
 		var img = new Image();
 		img.src = maskImgSrc;
 		img.onload = function() {
-			ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
-				//ctx.fillRect(0,0,canvas.width,canvas)
+			if(isClip){
+				var nw = img.naturalWidth||img.width;
+				var nh = img.naturalHeight||img.height;
+				var cw, ch;
+				if(canvas.width/nw>canvas.height/nh){
+					cw = nw;
+					ch = cw/canvas.width*canvas.height;
+				}else{
+					ch = nh;
+					cw = ch/canvas.height*canvas.width;
+				}
+				ctx.drawImage(img, Math.round((nw-cw)/2), Math.round((nh-ch)/2), cw, ch, 0, 0, canvas.width, canvas.height);
+			}else{
+				ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+			}
+			//ctx.fillRect(0,0,canvas.width,canvas)
 			tapClip();
 		};
 		//通过修改globalCompositeOperation来达到擦除的效果
