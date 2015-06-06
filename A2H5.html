@@ -274,7 +274,7 @@
         
       </div>
 
-      <div class="section s2" style="background: url(http://7xje45.com2.z0.glb.qiniucdn.com/bg-2.jpg) no-repeat;">
+      <div class="section s2" style="background: url(http://7xje45.com2.z0.glb.qiniucdn.com/bg-2hui.jpg) no-repeat;">
 
         <div class="slide"><img src="http://7xje45.com2.z0.glb.qiniucdn.com/A2-2-1.jpg" alt="" style="max-width: 80%;"></div>
 
@@ -429,7 +429,15 @@
           $.fn.fullpage.moveSectionDown()
         })
         
-
+   //更换背景
+        $(".crowd").css({
+          background: "url(http://7xje45.com2.z0.glb.qiniucdn.com/bghui.jpg) repeat center top",
+           backgroundSize:"110% auto",
+		});
+        //更换颜色
+        $(".mybtn").css({
+          background: "black",
+        }); 
       });
 
       function showResetButton() {
